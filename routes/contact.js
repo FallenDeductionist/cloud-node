@@ -1,13 +1,4 @@
 const fs = require('fs');
-
-const config = {
-    bucketName: 'cloud-exam2',
-    dirName: '', /* optional */
-    region: 'us-east-2',
-    accessKeyId: 'AKIAI3F3BSYQXQZWE6TA',
-    secretAccessKey: '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',
-    s3Url: 'https://s3.us-east-2.amazonaws.com/', /* optional */
-}
  
 module.exports = {
     addContactPage: (req, res) => {
