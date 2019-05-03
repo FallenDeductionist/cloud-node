@@ -1,0 +1,38 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (contacts.length > 0) {%>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Fecha de nacimiento</th>
+                        <th scope="col">Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% contacts.forEach((contact, index) => { %>
+                        <tr>
+                            <th scope="row"><%= contact.id %></th>
+                            <td><%= contact.name %></td>
+                            <td><%= contact.surname %></td>
+                            <td><%= contact.email %></td>
+                            <td><%= contact.birthday %></td>
+                            <td><img src="/assets/img/<%= contact.image %>" class="rounded-circle contact-img" alt=""></td>
+                            <td>
+                                <a href="/edit/<%= contact.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editar</a>
+                                <a href="/delete/<%= contact.id %>" class="btn btn-sm btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No existen contactos. Haz click <a href="/add" >aquí</a> para agregar contactos.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
