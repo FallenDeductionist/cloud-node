@@ -1,6 +1,17 @@
 <% include partials/header.ejs %>
     <div class="table-wrapper">
         <% if (contacts.length > 0) {%>
+          <form class="" action="/search" method="post">
+            <table class="table table-hovered">
+              <tr>
+                <td>
+                  <input type="text" name="words" value="">
+                  <button type="submit" class="btn btn-primary float-right">Buscar</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+
             <table class="table table-hovered">
                 <thead class="thead-dark">
                     <tr>
@@ -10,6 +21,7 @@
                         <th scope="col">Correo</th>
                         <th scope="col">Fecha de nacimiento</th>
                         <th scope="col">Imagen</th>
+                        <th scope="col" colspan="2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
